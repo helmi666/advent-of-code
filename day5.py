@@ -73,7 +73,7 @@ def seed_exist(seed_num: int, avail_seeds: list) -> bool:
 			return True
 	return False
 
-# imcrement location from 0 until existing seed is found
+# increment location from 0 until existing seed is found
 for loc in range(2147483647):
 	seed_num = find_seed(maps, loc)
 	if seed_exist(seed_num, seeds):

@@ -75,11 +75,4 @@ for num in steps_lst:
 		lcm_usable = False
 print(f"lcm_usable: {lcm_usable}")
 
-def lcm(a, b):
-    return abs(a * b) // math.gcd(a, b)
-
-result = steps_lst[0]
-for i in range(1, len(steps_lst)):
-	result = lcm(result, steps_lst[i])
-
-print(f"part2: {result}")
+print(f"part2: {math.lcm(*steps_lst)}")

@@ -7,8 +7,6 @@ data = [item.rstrip().split() for item in data]
 data = [[int(num) for num in history] for history in data]
 
 def all_zeros(lst: list) -> bool:
-	if lst == []:
-		return False
 	for item in lst:
 		if item != 0:
 			return False

@@ -1,5 +1,5 @@
 # get data from the file
-with open("day3.txt") as file:
+with open("input/day3.txt") as file:
 	line_list = file.readlines()
 
 all_nums = {}

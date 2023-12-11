@@ -10,7 +10,7 @@ def parse_maps(data: list, start_line: str, end_line: str) -> dict:
 	extracted = [[int(num) for num in sublist] for sublist in extracted]
 	return extracted
 
-with open("day5.txt") as file:
+with open("input/day5.txt") as file:
 	data = file.readlines()
 
 data = [line.rstrip() for line in data]

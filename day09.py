@@ -1,5 +1,5 @@
 # parse data from file into a list of sublists(histories)
-with open("day9.txt") as file:
+with open("input/day9.txt") as file:
 	data = file.readlines()
 
 data = [item.rstrip().split() for item in data]

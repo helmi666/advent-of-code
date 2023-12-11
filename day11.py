@@ -39,7 +39,7 @@ def get_result(galaxies: dict) -> int:
 	return lengths
 
 if __name__ == "__main__":
-	with open("day11.txt") as file:
+	with open("input/day11.txt") as file:
 		data = file.readlines()
 
 	grid = [list(row.rstrip()) for row in data]

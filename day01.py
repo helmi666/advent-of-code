@@ -15,7 +15,7 @@ def get_last_num(line: str) -> int:
 			i -= 1
 
 nums = []
-with open("day1.txt") as file:
+with open("input/day1.txt") as file:
 	for line in file:
 		nums.append(get_first_num(line)*10 + get_last_num(line))
 

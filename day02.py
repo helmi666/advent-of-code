@@ -18,7 +18,7 @@ def check_cube(cube_set: str) -> bool:
 	return True
 
 results = []
-with open("day2.txt") as file:
+with open("input/day2.txt") as file:
 	for line in file:
 		cube_sets = line.rstrip().split(';')
 		# get game num

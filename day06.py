@@ -10,7 +10,7 @@ def count_winning(time: int, ref_dist: int) -> int:
 
 """ part one """
 # save the data to a dict: key = time, value = distance
-with open("day6.txt") as file:
+with open("input/day6.txt") as file:
 	data = file.readlines()
 
 for i in range(2):

@@ -1,7 +1,7 @@
 import math
 
 # parse instructions into string, network into dict
-with open("day8.txt") as file:
+with open("input/day8.txt") as file:
 	data = file.readlines()
 
 instr = data[0].rstrip()

@@ -1,6 +1,6 @@
 # read data from file to a list of tuples
 hands = []
-with open("day7.txt") as file:
+with open("input/day7.txt") as file:
 	for line in file:
 		line = line.split()
 		hands.append((line[0], int(line[1])))

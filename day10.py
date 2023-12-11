@@ -100,7 +100,7 @@ def find_next(grid: list, current: Tile, prev: Tile) -> Tile:
 	return next_tile
 
 # parse data from file into a 2D array (a list of strings)
-with open("day10.txt") as file:
+with open("input/day10.txt") as file:
 	grid = file.readlines()
 
 grid = [row.rstrip() for row in grid]

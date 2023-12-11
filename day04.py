@@ -20,7 +20,7 @@ def count_matches(line: str) -> int:
 			count += 1
 	return count
 
-with open("day4.txt") as file:
+with open("input/day4.txt") as file:
 	line_list = file.readlines()
 
 # part one

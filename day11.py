@@ -13,7 +13,7 @@ def sort_galaxies(grid: list) -> dict:
 	return galaxies
 
 # update coordinates of each galaxy based on expansion rate of universe
-def update_coords(galaxies: dict, expansion_rate: int):
+def update_coords(empty_rows: list, empty_cols: list, galaxies: dict, expansion_rate: int):
 	for galaxy_id, coords in galaxies.items():
 		row = coords[0]
 		col = coords[1]
@@ -55,9 +55,9 @@ if __name__ == "__main__":
 			empty_cols.append(col_index)
 	
 	galaxies = sort_galaxies(grid)
-	update_coords(galaxies, 2)
+	update_coords(empty_rows, empty_cols, galaxies, 2)
 	print(f"part1: {get_result(galaxies)}")
 
 	galaxies = sort_galaxies(grid)
-	update_coords(galaxies, 1000000)
+	update_coords(empty_rows, empty_cols, galaxies, 1000000)
 	print(f"part2: {get_result(galaxies)}")

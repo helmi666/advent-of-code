@@ -84,8 +84,5 @@ if __name__ == "__main__":
 
 		MEMO = {}
 		arrs_sum += count_arrs(springs, groups, 0, 0)
-		for key, value in MEMO.items():
-			print("key: ", key)
-			print("value: ", value)
 
 	print(arrs_sum)

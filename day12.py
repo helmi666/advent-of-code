@@ -14,9 +14,8 @@ def count_arrs(springs: str, groups: list, i: int, j: int) -> int:
 	
 	# to improve efficiency, repetitive func calls can be avoided (esp. for deep recursions)
 	# by saving results of decision makings (typical example: fibonacci sequence)
-	# func calls goes up bottom whereas return value goes bottom up
-	# next time when same decision making is needed, no further recursion will be repeated, 
-	# instead, the result saved in cache is used.
+	# next time when same decision making is needed, no further recursion (for that decision making) 
+	# will be repeated, instead, the result saved in cache is used.
 	if (i, j) in MEMO:
 		return MEMO[(i, j)]
 

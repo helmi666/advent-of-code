@@ -71,33 +71,22 @@ if __name__ == "__main__":
 	with open("input/day13.txt") as file:
 		data = file.readlines()
 
-	# part one
 	data_cpy = data[:]
-	counter = 0
+	counter_part1 = 0
+	counter_part2 = 0
 	while data_cpy != []:
 		# process one parttern as a time
 		pattern = get_pattern(data_cpy)
-		counter_tmp = check_h_mirror(pattern)
-		if counter_tmp != -1:
-			counter += counter_tmp * 100
-		else:
-			counter_tmp = check_v_mirror(pattern)
-			counter += counter_tmp
-	print("part1", counter)
-
-	# part two
-	data_cpy = data[:]
-	counter = 0
-	while data_cpy != []:
-		old_res = 0
-		pattern = get_pattern(data_cpy)
+		# get old results (part 1 + part 2)
 		h_mirror_found = check_h_mirror(pattern)
 		if h_mirror_found != -1:
 			old_res = h_mirror_found
+			counter_part1 += old_res * 100
 		else:
 			old_res = check_v_mirror(pattern)
-		res_found = False
-		res = 0
+			counter_part1 += old_res
+		# get new results (part 2)
+		new_res_found = False
 		for row in range(len(pattern)):
 			for col in range(len(pattern[row])):
 				reverse_ash_rock(pattern, row, col)
@@ -105,28 +94,29 @@ if __name__ == "__main__":
 				if h_mirror_found != -1:
 					res_row = check_h_mirror(pattern, old_res)
 					if res_row != -1:
-						res = res_row * 100
-						res_found = True
+						new_res = res_row * 100
+						new_res_found = True
 						break 
 					res_col = check_v_mirror(pattern)
 					if res_col != -1:
-						res = res_col
-						res_found = True
+						new_res = res_col
+						new_res_found = True
 						break
 				else:
 					res_row = check_h_mirror(pattern)
 					if res_row != -1:
-						res = res_row * 100
-						res_found = True
+						new_res = res_row * 100
+						new_res_found = True
 						break 
 					res_col = check_v_mirror(pattern, old_res)
 					if res_col != -1:
-						res = res_col
-						res_found = True
+						new_res = res_col
+						new_res_found = True
 						break
 				# new solution not found, undo the change, and move to next cell
 				reverse_ash_rock(pattern, row, col)
-			if res_found:
+			if new_res_found:
 				break
-		counter += res
-	print("part2:", counter)
+		counter_part2 += new_res
+	print("part1", counter_part1)
+	print("part2:", counter_part2)

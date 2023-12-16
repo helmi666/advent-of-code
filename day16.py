@@ -21,8 +21,9 @@ def energized(grid: list, queue: list) -> int:
 					queue.append(next_move)
 		# uncomment the following to visualize the visited tiles: '#' for visited/energized '.' otherwise
 		""" coords = list(visited.keys())
+		print('\n')
 		for r, row in enumerate(grid):
-			for c, col in enumerate(grid[0]):
+			for c in range(len(row)):
 				if (r, c) in coords:
 					print("X", end="")
 				else:

@@ -156,8 +156,8 @@ if __name__ == "__main__":
 	dest_p1 = Node.get_node((f_row, f_col), 3, "None")
 	dest_p2 = Node.get_node((f_row, f_col), 10, "None")
 
-	# get length of shortest path
-	shortest_path_len_part1 = nx.shortest_path_length(G1, source=src, target=dest_p1, weight='weight')
-	shortest_path_len_part2 = nx.shortest_path_length(G2, source=src, target=dest_p2, weight='weight')
-	print(f"Part1 | Shortest Path Length: {shortest_path_len_part1}")
-	print(f"Part2 | Shortest Path Length: {shortest_path_len_part2}")
+	# get least heat loss
+	least_heat_loss_part1 = nx.shortest_path_length(G1, source=src, target=dest_p1, weight='weight')
+	least_heat_loss_part2 = nx.shortest_path_length(G2, source=src, target=dest_p2, weight='weight')
+	print(f"part1: {least_heat_loss_part1}")
+	print(f"part2: {least_heat_loss_part2}")

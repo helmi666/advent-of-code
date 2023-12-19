@@ -5,22 +5,22 @@ def sort(parts: dict, workflows: dict) -> str:
 	m = parts['m']
 	a = parts['a']
 	s = parts['s']
-	workflow = "in"
+	act = "in"
 	while True:
-		for exp in workflows[workflow][:-1]:
+		for exp in workflows[act][:-1]:
 			cond = exp.split(':')[0]
 			if all(char.isdigit() or char in "xmas><" for char in cond):
 				cond_fulfilled = eval(cond)
 			else:
 				print("invalid expression")
 			if cond_fulfilled:
-				workflow = exp.split(':')[1]
+				act = exp.split(':')[1]
 				break
 		else:
-			workflow = workflows[workflow][-1]
-		if workflow == 'A' or workflow == 'R':
+			act = workflows[act][-1]
+		if act == 'A' or act == 'R':
 			break
-	return workflow
+	return act
 
 def count(rng: dict) -> int:
 	res = 1

@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
 	# part one
 	coords = get_coords(data)
-	# use shoelace formula to calculate polygon area if 
+	# use shoelace formula to calculate polygon area as
 	# coordinates of its vertices are known
 	area1 = get_area(coords)
 	# from shoelace formula we get twisted area (based on coords) which
@@ -55,7 +55,7 @@ if __name__ == "__main__":
 
 	# part two
 	new_data = []
-	for r, row in enumerate(data):
+	for row in data:
 		new_row = []
 		dirct = row[2][-2]
 		if dirct == '0':

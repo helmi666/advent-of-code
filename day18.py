@@ -47,8 +47,8 @@ if __name__ == "__main__":
 	# use shoelace formula to calculate polygon area as
 	# coordinates of its vertices are known
 	area1 = get_area(coords)
-	# from shoelace formula we get twisted area (based on coords) which
-	# does not represent the whole area as required in this puzzle
+	# from above we get twisted area (based on coords - center of the tiles) which
+	# does not represent the whole area as required in this puzzle <- edge tiles + interior tiles
 	# for each edge tile 1/2 of itself should be added plus 1 (sum of all corner tiles)
 	area2 = get_edge_len(data) / 2 + 1
 	print("part1:", area1 + area2)

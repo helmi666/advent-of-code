@@ -16,7 +16,7 @@ if __name__ == "__main__":
 	queue = deque([(len(grid) // 2, len(grid[0]) // 2)])
 	counter = 0
 	rounds = 0
-	tasks_add = 1
+	tasks_added = 1
 	while queue:
 		r, c = queue.popleft()
 		if r + 1 < len(grid):
@@ -32,8 +32,8 @@ if __name__ == "__main__":
 			if coords[(r, c - 1)] != '#' and not (r, c - 1) in queue:
 				queue.append((r, c - 1))
 		counter += 1
-		if counter == tasks_add:
-			tasks_add = len(queue)
+		if counter == tasks_added:
+			tasks_added = len(queue)
 			rounds += 1
 			counter = 0
 		if rounds == 64:

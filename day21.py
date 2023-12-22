@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 def bfs(grid: list, coords: dict, steps_count: int) -> int:
 	row_len = len(grid)
 	col_len = len(grid[0])
+	# coordinates of S and intial steps: row, col, steps
 	queue = deque([(len(grid) // 2, len(grid[0]) // 2, 0)])
 	visited = set()
 	dircts = [(0, 1), (1, 0), (0, -1), (-1, 0)]

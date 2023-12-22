@@ -68,7 +68,7 @@ if __name__ == "__main__":
 	# part two
 	# 131 is the width/height of the grid; no obstacles from S to edges at four sides 
 	# 26501365 = 65 + 131 * 202300, which means in addition to traversing the original 
-	# grid from S, 202300 times of the expanded grid is traversed
+	# grid from S, 202300 times of the expanded grid is traversed (in one direction)
 	x_values = np.array([0, 1, 2, 3, 4, 5])
 	# 65, 196, 327, 458, 589, 720 -> 
 	# 65 + 131 * 0, 65 + 131 * 1, 65 + 131 * 2, 65 + 131 * 3, 65 + 131 * 4, 65 + 131 * 5

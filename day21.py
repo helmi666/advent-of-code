@@ -82,7 +82,7 @@ if __name__ == "__main__":
 	""" quadratic_fit = np.polyval(coefficients, x_values)
 	plt.scatter(x_values, y_values, label="Data")
 	plt.plot(x_values, quadratic_fit, label="Quadratic Fit", color="red")
-	plt.xlabel("Extra grids traversed")
+	plt.xlabel("Extra grids traversed (in one direction)")
 	plt.ylabel("Garden plots reached")
 	plt.legend()
 	plt.show() """

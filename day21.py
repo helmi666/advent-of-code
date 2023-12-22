@@ -1,5 +1,6 @@
 from collections import deque
 import numpy as np
+import matplotlib.pyplot as plt
 
 # improved efficiency for part2
 def bfs(grid: list, coords: dict, steps_count: int) -> int:
@@ -68,11 +69,23 @@ if __name__ == "__main__":
 	# 131 is the width/height of the grid; no obstacles from S to edges at four sides 
 	# 26501365 = 65 + 131 * 202300, which means in addition to traversing the original 
 	# grid from S, 202300 times of the expanded grid is traversed
-	x_values = [0, 1, 2, 3, 4, 5]
+	x_values = np.array([0, 1, 2, 3, 4, 5])
 	# 65, 196, 327, 458, 589, 720 -> 
 	# 65 + 131 * 0, 65 + 131 * 1, 65 + 131 * 2, 65 + 131 * 3, 65 + 131 * 4, 65 + 131 * 5
-	y_values = [bfs(grid, coords, steps_count) for steps_count in [65, 196, 327, 458, 589, 720]]
+	y_values = np.array([bfs(grid, coords, steps_count) for steps_count in [65, 196, 327, 458, 589, 720]])
+	
 	# fitting a polynomial of degree 2 (quadratic) to the data
 	coefficients = np.polyfit(x_values, y_values, 2)
+
+	# uncomment the following to plot the results
+	# the quadratic fit closely matches the data points -> a quadratic relationship
+	""" quadratic_fit = np.polyval(coefficients, x_values)
+	plt.scatter(x_values, y_values, label="Data")
+	plt.plot(x_values, quadratic_fit, label="Quadratic Fit", color="red")
+	plt.xlabel("Steps")
+	plt.ylabel("Garden plots reached")
+	plt.legend()
+	plt.show() """
+
 	res = np.polyval(coefficients, 202300)
 	print("part2:", np.round(res, 0))

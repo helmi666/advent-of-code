@@ -68,7 +68,7 @@ if __name__ == "__main__":
 					if contents[(next_r, next_c)] == '.' or contents[(next_r, next_c)] == '^':
 						G1.add_edge((next_r, next_c), (r, c), weight=1)
 
-	# generates all simple paths in graph between two specified nodes
+	# generate all simple paths in graph between two specified nodes
 	# a simple path -> a path in which no node appears more than once
 	all_paths = nx.all_simple_edge_paths(G1, start, goal)
 	all_paths_lens = map(len, all_paths)
@@ -118,7 +118,7 @@ if __name__ == "__main__":
 			intersections.append(node)
 	intersections.append(goal)
 
-	def reachable_intersections(grid, start, intersections):
+	def reachable_intersections(grid: list, start: tuple, intersections: list) -> dict:
 		# key = all intersections that start can reach
 		# value = distance between start and corresponding intersection
 		distances = {}

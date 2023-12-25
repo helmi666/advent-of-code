@@ -21,7 +21,7 @@ class Hailstone:
 		m2 = another.vy / another.vx
 
 		# if having same slope in their velocity vectors -> 
-		# two hailstones moving at the same direction -> will not intersect
+		# two lines are parallel -> will not intersect
 		if m1 == m2:
 			return False
 
